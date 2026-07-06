@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "world-docs"
+version = "0.1.0"
+description = "Local, self-healing mirror of framework/tool documentation for humans and coding agents."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Shikhar Verma", email = "shikhar1verma@gmail.com" }]
+keywords = ["documentation", "llm", "agents", "offline-docs", "context7", "mirror"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Documentation",
+    "Intended Audience :: Developers",
+]
+
+# Runtime dependencies: NONE. Every fetcher uses only the Python standard
+# library — that is a deliberate invariant of this repo (see AGENTS.md). Keep it
+# empty; if a source ever genuinely needs a package, add it here and say why.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest"]
+
+[project.scripts]
+wd = "wd:main"
+world-docs = "wd:main"          # alias
+
+[project.urls]
+Homepage = "https://github.com/shikhar1verma/world-docs"
+
+# The Python code lives under src/. `common` is the only importable package;
+# the per-source scripts under src/sources/<name>/ are loaded by path (their
+# folder names contain hyphens on purpose, to match docs/<name>/), so they are
+# not declared as packages. wd/refresh_all/verify_all are top-level modules.
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["common"]
+py-modules = ["wd", "refresh_all", "verify_all"]
+
+[tool.ruff]
+line-length = 100

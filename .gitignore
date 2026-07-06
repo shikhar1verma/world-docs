@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Generated documentation — regenerable from src/, so it is NOT committed.
+# Rebuild everything with:  wd refresh   (or: python src/refresh_all.py)
+# ---------------------------------------------------------------------------
+/docs/
+
+# Raw fetch cache / shallow git clones (the "clone" step's scratch space)
+._temp/
+
+# Legacy per-tech output folders from the pre-restructure layout. Kept ignored
+# in case an old checkout still has them; the real source now lives in src/.
+/claude-code-agent/
+/codex-agent/
+/grok-agent/
+/hermes-agent/
+/openai-api-docs/
+/openclaw-agent/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

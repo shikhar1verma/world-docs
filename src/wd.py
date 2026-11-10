@@ -11,7 +11,7 @@ One small, memorable entry point for the whole repo:
     wd verify  [source]   check built docs are present & valid (no network)
 
 `[source]` is one of the folder names under src/sources/ (claude-code, codex,
-grok, hermes, openai-api, openclaw). Omit it to act on every source.
+grok, hermes, openai-api, openclaw, openspec). Omit it to act on every source.
 
 Sources are discovered from src/sources/ and each exposes fetch()/refresh()/
 verify() in its like-named module; `wd` is the only place that chains them.

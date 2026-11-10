@@ -30,12 +30,14 @@ After a build, docs live under `docs/<source>/`:
 | `hermes` | `docs/hermes/` | Hermes agent framework |
 | `openai-api` | `docs/openai-api/` | OpenAI API (chat, assistants, realtime, …) |
 | `openclaw` | `docs/openclaw/` | OpenClaw gateway |
+| `openspec` | `docs/openspec/` | OpenSpec spec-driven development CLI (openspec.dev) |
 
 Conventions when reading:
 - Folders and files carry a `NN-` numeric prefix that mirrors the **upstream
   sidebar order** — read them in numeric order for the intended flow.
 - Each source keeps its **nav/ordering reference** at its docs root
-  (`nav.json`, `llms.txt`, `sidebars.ts`, or `docs.json`) — a good map of the set.
+  (`nav.json`, `llms.txt`, `sidebars.ts`, `docs.json`, or
+  `docs.sync.config.mjs`) — a good map of the set.
 - Grep is your friend: `grep -ri "prompt caching" docs/claude-code/`.
 
 If `docs/<source>/` is missing, it just hasn't been built yet — run
@@ -67,7 +69,8 @@ under `src/sources/<source>/`, each calling the shared helpers in `src/common/`:
    `._temp/<source>/`. Two mechanisms in use:
    - *HTTP*: download an `llms.txt`/`nav.json` index + each page's `.md` twin
      (`claude-code`, `codex`, `grok`, `openai-api`).
-   - *git*: shallow `git clone --depth=1` of the docs repo (`hermes`, `openclaw`).
+   - *git*: shallow `git clone --depth=1` of the docs repo (`hermes`, `openclaw`,
+     `openspec`).
 2. **`refresh.py` → `refresh()`** — the "layout" step. Read the nav index, build
    an ordered plan, wipe `docs/<source>/`, and copy pages in with `NN-` prefixes.
 3. **`verify.py` → `verify()`** — the "self-heal detector". Assert the output is

@@ -23,6 +23,7 @@ and the full doc set rebuilds locally.
 | `hermes` | github.com/NousResearch/hermes-agent | git clone (`sidebars.ts`) | ~350 |
 | `openai-api` | developers.openai.com/api | HTTP (`llms.txt` index + `.md` twins) | ~380 |
 | `openclaw` | github.com/openclaw/openclaw | git clone (`docs.json`) | ~685 |
+| `openspec` | github.com/Fission-AI/OpenSpec (openspec.dev/docs) | git clone (`docs.sync.config.mjs`) | ~20 |
 
 \* approximate; the whole point is that a refresh pulls whatever is current.
 
@@ -41,7 +42,7 @@ wd list                   # see what's built
 ```
 
 No install needed if you prefer: `python src/refresh_all.py` does the same as
-`wd refresh`. Requires **Python 3.9+** and `git` (for the two git-based sources).
+`wd refresh`. Requires **Python 3.9+** and `git` (for the three git-based sources).
 
 ## The `wd` command
 

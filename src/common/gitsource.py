@@ -1,6 +1,6 @@
 """
 Git-backed fetching for sources whose docs live in a public repo (Hermes,
-OpenClaw). A shallow ``--depth=1`` clone keeps ``._temp/<name>/`` small; on
+OpenClaw, OpenSpec). A shallow ``--depth=1`` clone keeps ``._temp/<name>/`` small; on
 later runs it fast-forwards instead of re-cloning.
 """
 
